@@ -1,5 +1,9 @@
 {
     "main_url": "https://dev.profteam.su/",
     "login": "testerEmployer",
-    "password": "Password1"
+    "password": "Password1",
+    "vakansia": "Крутышеника",
+    "requirements": "Быть крутышкой",
+    "duties": "Хотя бы быть на работе"
 }
+
