@@ -125,7 +125,6 @@ describe('Cypress Tests', () => {
     //         cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
     //         cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
     //         cy.get(':nth-child(1) > .responses-list-item__actions > :nth-child(1)').click();
-
     //         })
     // });
 
@@ -143,7 +142,22 @@ describe('Cypress Tests', () => {
     //         })
     // });
 
-    it('Взаимодействие внутри рабочего пространства Позитивный тест', () => {
+    // it('Взаимодействие внутри рабочего пространства Позитивный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.login);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
+    //         cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
+    //         cy.get('.navigation-workspace > :nth-child(3)').click();
+    //         cy.get('.infinite-loader > :nth-child(1) > .button').click();
+    //         cy.get('.form-area').type('МУХАХАХАХАХ ПЕЛЬМЕНИИ');
+    //         cy.get('.comment-textarea__buttons > :nth-child(2)').click();
+    //         })
+    // });
+
+    it('Взаимодействие внутри рабочего пространства Негативный тест', () => {
         cy.fixture('cypressTests').then(data => {
             cy.visit(data.main_url);
             cy.get('[href="/login"] > .button').click();
@@ -151,9 +165,10 @@ describe('Cypress Tests', () => {
             cy.get('.form-input--password').type(data.password);
             cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
             cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
-            cy.get('.navigation-workspace > :nth-child(4)').click();
-            cy.get(':nth-child(1) > .responses-list-item__button').click();
-            cy.get(':nth-child(1) > .responses-list-item__button').should('be.visible');
+            cy.get('.navigation-workspace > :nth-child(3)').click();
+            cy.get('.infinite-loader > :nth-child(2) > .button').click();
+            cy.get('.form-area').should('be.disabled');
+            
             })
     });
 
