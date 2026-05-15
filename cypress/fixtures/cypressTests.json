@@ -4,6 +4,7 @@
     "password": "Password1",
     "vakansia": "Крутышеника",
     "requirements": "Быть крутышкой",
-    "duties": "Хотя бы быть на работе"
+    "duties": "Хотя бы быть на работе",
+    "testPoisk": "<script>alert('haha')</script>"
 }
 
