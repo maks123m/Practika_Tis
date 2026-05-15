@@ -1,4 +1,4 @@
-describe('Cypress Tests', ()=>{
+describe('Cypress Tests', () => {
     // it('Авторизация Негативный тест', () => {
     //     cy.fixture('cypressTests').then(data => {
     //         cy.visit(data.main_url);
@@ -50,7 +50,7 @@ describe('Cypress Tests', ()=>{
     //     })
     // });
 
-    // it('просмотр страницы с вакансиями (с поиском и фильтром)', () => {
+    // it('просмотр страницы с вакансиями (с поиском и фильтром) Позитивный тест', () => {
     //     cy.fixture('cypressTests').then(data => {
     //         cy.visit(data.main_url);
     //         cy.get('[href="/login"] > .button').click();
@@ -69,19 +69,92 @@ describe('Cypress Tests', ()=>{
     //     })
     // });
 
-    it('просмотр страницы с вакансиями (с поиском и фильтром)', () => {
+    // it('просмотр страницы с вакансиями (с поиском и фильтром) Негативный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.login);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
+    //         cy.wait(3000);
+    //         cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
+    //         cy.get('.form-input--text').type(data.testPoisk);
+    //         cy.get('div.search-input__field > .button').click();
+    //     })
+    // });
+
+    // it('Отклик на вакансию студентом Позитивный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.loginStudent);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
+    //         cy.wait(3000);
+    //         cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
+    //         cy.get('.form-input--text').type('Пельмени33SSS');
+    //         cy.get('div.search-input__field > .button').click();
+    //         cy.get(':nth-child(1) > .vacancy-item__info-wrapper > .vacancy-item__footer-wrapper > .vacancy-footer > .vacancy-footer__button-wrapper > .button__background-color-green').click();
+
+    //     })
+    // });
+
+    // it('Отклик на вакансию студентом Негативный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.loginStudent);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
+    //         cy.wait(3000);
+    //         cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
+    //         cy.get('.form-input--text').type('Пельмени33SSS');
+    //         cy.wait(500);
+    //         cy.get('div.search-input__field > .button').click();
+    //         cy.get('.vacancy-footer__button-wrapper').click();
+    //         cy.get(':nth-child(1) > .vacancy-item__info-wrapper > .vacancy-item__footer-wrapper > .vacancy-footer > .vacancy-footer__button-wrapper').should('be.visible');
+    //     })
+    // });
+
+    // it('Подтверждение отклика работодателем Позитивный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.login);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
+    //         cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
+    //         cy.get(':nth-child(1) > .responses-list-item__actions > :nth-child(1)').click();
+
+    //         })
+    // });
+
+    // it('Подтверждение отклика работодателем Негативный тест', () => {
+    //     cy.fixture('cypressTests').then(data => {
+    //         cy.visit(data.main_url);
+    //         cy.get('[href="/login"] > .button').click();
+    //         cy.get('.form-input--text').type(data.login);
+    //         cy.get('.form-input--password').type(data.password);
+    //         cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
+    //         cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
+    //         cy.get('.navigation-workspace > :nth-child(4)').click();
+    //         cy.get(':nth-child(1) > .responses-list-item__button').click();
+    //         cy.get(':nth-child(1) > .responses-list-item__button').should('be.visible');
+    //         })
+    // });
+
+    it('Взаимодействие внутри рабочего пространства Позитивный тест', () => {
         cy.fixture('cypressTests').then(data => {
             cy.visit(data.main_url);
             cy.get('[href="/login"] > .button').click();
             cy.get('.form-input--text').type(data.login);
             cy.get('.form-input--password').type(data.password);
-            cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
-            cy.wait(3000);
-            cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
-            cy.get('.form-input--text').type(data.testPoisk);
-            cy.get('div.search-input__field > .button').click();
-            cy.get('.vacancy-list__failed-loading > .card-title');
-        })
+            cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
+            cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
+            cy.get('.navigation-workspace > :nth-child(4)').click();
+            cy.get(':nth-child(1) > .responses-list-item__button').click();
+            cy.get(':nth-child(1) > .responses-list-item__button').should('be.visible');
+            })
     });
 
 
