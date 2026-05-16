@@ -6,6 +6,7 @@ describe('Cypress Tests', () => {
             cy.get('.form-input--text').type(data.login);
             cy.get('.form-input--password').type('Password');
             cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
+            cy.get(':nth-child(3) > .button').should('be.visible');
         })
     });
 
@@ -18,6 +19,7 @@ describe('Cypress Tests', () => {
             cy.get('.form-input--text').type(data.login);
             cy.get('.form-input--password').type(data.password);
             cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
+            cy.get('.page__content').should('be.visible');
         })
     });
 
@@ -58,11 +60,17 @@ describe('Cypress Tests', () => {
             cy.get(':nth-child(3) > .button', {timeout: 3000}).click();
             cy.wait(3000);
             cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
+            cy.wait(500);
             cy.get(':nth-child(3) > :nth-child(2) > .form-select__selected').click();
+            cy.wait(500);
             cy.get('.form-select__items > :nth-child(2)').click();
+            cy.wait(500);
             cy.get(':nth-child(4) > :nth-child(2) > .form-select__selected').click();
+            cy.wait(500);
             cy.get('.form-select__items > :nth-child(2)').click();
+            cy.wait(500);
             cy.get('div.search-input__field > .button').click();
+            cy.get('.vacancies-block__vacancies-filters-wrapper').should('be.visible');
         })
     });
 
@@ -77,6 +85,7 @@ describe('Cypress Tests', () => {
             cy.get(':nth-child(1) > .header__nav > [href="/vacancies"]').click();
             cy.get('.form-input--text').type(data.testPoisk);
             cy.get('div.search-input__field > .button').click();
+            cy.get('.vacancies-block__vacancies-filters-wrapper').should('be.visible');
         })
     });
 
@@ -92,6 +101,7 @@ describe('Cypress Tests', () => {
             cy.get('.form-input--text').type('Пельмени33SSsdS');
             cy.get('div.search-input__field > .button').click();
             cy.get(':nth-child(1) > .vacancy-item__info-wrapper > .vacancy-item__footer-wrapper > .vacancy-footer > .vacancy-footer__button-wrapper > .button__background-color-green').click();
+            cy.get(':nth-child(1) > .vacancy-item__info-wrapper > .vacancy-item__footer-wrapper > .vacancy-footer > .vacancy-footer__button-wrapper').should('be.visible');
 
         })
     });
@@ -121,6 +131,7 @@ describe('Cypress Tests', () => {
             cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
             cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
             cy.get(':nth-child(1) > .responses-list-item__actions > :nth-child(1)').click();
+            cy.get('.infinite-loader > :nth-child(1) > .button').should('be.visible');
             })
     });
 
@@ -177,6 +188,7 @@ describe('Cypress Tests', () => {
             cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
             cy.get('.infinite-loader > :nth-child(1) > .button').click();
             cy.get('.status-open__buttons > :nth-child(1)').click();
+            cy.get('.detailed-workspace').should('exist');
             })
     });
     
@@ -187,7 +199,8 @@ describe('Cypress Tests', () => {
             cy.get('.form-input--text').type(data.login);
             cy.get('.form-input--password').type(data.password);
             cy.get(':nth-child(3) > .button', { timeout: 3000 }).click();
-            cy.get(':nth-child(5) > .menu-item__item-name', { timeout: 3000 }).click();
+            cy.wait(500);
+            cy.get(':nth-child(5) > .menu-item__item-name').click();
             cy.get('.infinite-loader > :nth-child(1) > .button').click();
             cy.get('.status-open__buttons > :nth-child(1)').should('not.exist');
             })
